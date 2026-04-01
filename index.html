@@ -33,10 +33,10 @@ body{font-family:var(--f);background:#bfbab3;min-height:100vh;display:flex;justi
 .bu.sy::before{display:none}
 .sl{font-size:10.5px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.06em;padding:2px 0}
 .mg{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.mi{background:#fff;border:1px solid #e2e8f0;border-radius:var(--r);padding:9px 13px;cursor:pointer;display:flex;align-items:center;transition:all .12s;text-align:left;font-size:13px;color:#111;line-height:1.3}
+.mi{background:#fff;border:1px solid #e2e8f0;border-radius:var(--r);padding:9px 13px;cursor:pointer;display:flex;align-items:center;transition:all .12s;text-align:center;font-size:13px;color:#111;line-height:1.3;}
 .mi:hover{background:#f0f7ff;border-color:#90bdf8;transform:translateY(-1px)}
 .mi:active{transform:scale(.98)}
-.mi.full{grid-column:1/-1}
+.mi.full{grid-column:1/-1;}
 .mi.bk{border-color:#eee;color:#888}
 .mi.hu{border-color:var(--hd);background:var(--hb);color:var(--ht)}
 .sb{display:flex;flex-direction:column;gap:6px}
@@ -83,6 +83,7 @@ Por gentileza, informe seu nome e CPF.
   <div class="mg">
     <div class="mi" onclick="go('sede')">Sede</div>
     <div class="mi" onclick="go('regionais')">Regionais</div>
+    <div class="mi full" onclick="go('torne-se-um-corretor')">Torne-se um corretor</div>
   </div>
 </div>
 
@@ -102,10 +103,17 @@ Por gentileza, informe seu nome e CPF.
     <div class="mi bk full" onclick="go('inicio')">&#8617; Voltar ao menu principal</div>
   </div>
 </div>
-<div class="sc" id="s-encerrar">
-  <div class="bu">Atendimento concluído</div>
-  <div class="mi bk full" onclick="go('inicio')">&#8617; Voltar ao menu principal</div>
+<!--  -->
+<div class="sc" id="s-torne-se-um-corretor">
+  <div class="bu">Selecione um assunto:</div>
+  <div class="sb">
+    <div class="si" onclick="go('com-cred')">Consulta de Instituições Credenciadas <span class="ar">&#8250;</span></div>
+    <div class="si" onclick="go('si')">Inscrição <span class="ar">&#8250;</span></div>
+    <div class="si" onclick="go('sate')">Fale com um Atendente <span class="ar">&#8250;</span></div>
+    <div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="mg">&#8250;</span></div>
+  </div>
 </div>
+
 <!-- 1.1 SECRETARIA -->
 <div class="sc" id="s-secretaria">
   <div class="bu">Selecione o assunto em <b>Secretaria</b>:</div>
@@ -120,8 +128,7 @@ Por gentileza, informe seu nome e CPF.
     <div class="si" onclick="go('sic')">Isenção — Idade / Tempo de Contribuição <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('scnai')">CNAI <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('scertidao')">Certidão <span class="ar">&#8250;</span></div>
-
-    <div class="si hu" onclick="go('sate')">Falar com Atendente <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('sate')">Atendente <span class="ar">&#8250;</span></div>
     <div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="ar">&#8250;</span></div>
   </div>
 </div>
@@ -139,7 +146,6 @@ Por gentileza, informe seu nome e CPF.
 <div class="sc" id="s-si-pf">
   <div class="cd"><div class="ci">Inscrição — Pessoa Física</div><div class="cb">Acesse o site do Creci-PR e confira a documentação necessária para realizar sua inscrição.<br><br><a href="https://www.crecipr.gov.br/torne-se-um-corretor/119-inscricao-pessoa-fisica" target="_blank">crecipr.gov.br — Inscrição Pessoa Física</a></div></div>
   <div class="cd ag"><div class="ci">Atendimento online em manutenção</div><div class="cb">As solicitações devem ser feitas presencialmente na sede ou na regional do Creci mais próxima.</div></div>
-
   <div class="sb"><div class="si bk" onclick="go('si')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 <div class="sc" id="s-si-pj">
@@ -277,10 +283,8 @@ Por gentileza, informe seu nome e CPF.
 <!-- Atendente Secretaria -->
 <div class="sc" id="s-sate">
   <div class="cd ag"><div class="ci">Atendimento Humano — Secretaria</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
-    
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('secretaria')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -289,11 +293,11 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="bu">Selecione o assunto em <b>Financeiro</b>:</div>
   <div class="sb">
     <div class="si" onclick="go('fa')">Anuidade do exercício <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('fb')">Segunda via de boleto <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('fd')">Negociar débitos (Dívida Ativa) <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('fr')">Recibo de pagamento <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('fb')">Segunda via de boleto <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('fd')">Negociar débitos (Dívida Ativa) <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('fr')">Recibo de pagamento <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('fc')">Certidão de Regularidade <span class="ar">&#8250;</span></div>
-    <div class="si hu" onclick="go('fat')">Falar com Atendente <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('fat')">Atendente <span class="ar">&#8250;</span></div>
     <div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="ar">&#8250;</span></div>
   </div>
 </div>
@@ -324,7 +328,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Financeiro</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('financeiro')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -342,7 +345,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Ouvidoria</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('ouvidoria')">↩ Voltar <span class="ar">›</span></div></div>
 </div>
 
@@ -387,7 +389,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Fiscalização</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('fiscalizacao')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -398,7 +399,7 @@ Aguarde um instante, em breve você será atendido.</div></div>
     <div class="si" onclick="go('pd-den')">Denúncia (orientações e formulário) <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('pd-def')">Defesa (Modelos) <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('pd-proc')">Processos <span class="ar">&#8250;</span></div>
-    <div class="si hu" onclick="go('pd-at')">Falar com Atendente <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('pd-at')">Atendente <span class="ar">&#8250;</span></div>
     <div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="ar">&#8250;</span></div>
   </div>
 </div>
@@ -472,7 +473,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Processo Disciplinar</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('processos')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -495,10 +495,10 @@ Aguarde um instante, em breve você será atendido.</div></div>
 <div class="sc" id="s-comunicacao">
   <div class="bu">Selecione o assunto em <b>Comunicação</b>:</div>
   <div class="sb">
-    <div class="si" onclick="go('com-at')">Imprensa e Comunicação Institucional <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('com-at')">Marketing e Divulgação <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('com-at')">Cursos de Capacitação Profissional <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('com-at')">Informações sobre Eventos <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Imprensa e Comunicação Institucional <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Marketing e Divulgação <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Cursos de Capacitação Profissional <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Informações sobre Eventos <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('com-locacao')">Locação de Auditório e Espaços<span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('com-sala')">Sala do Corretor — Reservas <span class="ar">&#8250;</span></div>
     <div class="si" onclick="go('com-portal')">Portal Creci Brasil <span class="ar">&#8250;</span></div>
@@ -510,7 +510,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Comunicação</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('comunicacao')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 <div class="sc" id="s-com-locacao">
@@ -538,7 +537,7 @@ Aguarde um instante, em breve você será atendido.</div></div>
 <div class="sc" id="s-com-sala">
   <div class="cd it"><div class="ci">Sala do Corretor — Reservas</div><div class="cb">O Creci-PR dispõe de espaços para uso dos corretores no atendimento a clientes. O agendamento deve ser realizado com antecedência mínima de 24 horas.<br><br>Para reservar, envie os seguintes dados:<br><br>&#8226; Nome<br>&#8226; Número do Creci<br>&#8226; Data e horário desejados<br>&#8226; Quantidade de pessoas<br>&#8226; Objetivo da reunião</div></div>
   <div class="sb">
-    <div class="si" onclick="go('com-at')">Clique aqui para reservar <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Clique aqui para reservar <span class="ar">&#8250;</span></div>
     <div class="si bk" onclick="go('comunicacao')">&#8617; Voltar <span class="ar">&#8250;</span></div>
   </div>
 </div>
@@ -560,7 +559,6 @@ Dúvidas sobre como incluir imóveis: <a href="https://ajuda.portalcreci.org.br"
   <div class="cd ag"><div class="ci">Suporte Técnico — Portal Creci Brasil</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('com-portal')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 <div class="sc" id="s-com-cred">
@@ -602,8 +600,8 @@ Com exceção dos cursos de Avaliação Imobiliária e Correspondente de Crédit
 
 <b>Importante:</b> Para se inscrever é necessário ter o e-mail @creci.org.br. Crie o e-mail no link: <a href="http://criar.creci.org.br/" target="_blank">criar.creci.org.br</a></div></div>
   <div class="sb">
-    <div class="si" onclick="go('com-at')">Dúvidas — Falar com equipe de Comunicação <span class="ar">&#8250;</span></div>
-    <div class="si" onclick="go('colibri-sup')">Suporte Técnico — Falar com equipe de Tecnologia <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('com-at')">Dúvidas — Falar com equipe de Comunicação <span class="ar">&#8250;</span></div>
+    <div class="si hu" onclick="go('colibri-sup')">Suporte Técnico — Falar com equipe de Tecnologia <span class="ar">&#8250;</span></div>
     <div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="ar">&#8250;</span></div>
   </div>
 </div>
@@ -612,7 +610,6 @@ Com exceção dos cursos de Avaliação Imobiliária e Correspondente de Crédit
 <div class="sc" id="s-outros">
   <div class="cd"><div class="ci">Outros Assuntos</div><div class="cb">Por favor, descreva a sua solicitação.</div></div>
   <div class="cd ag"><div class="ci">Atendimento Humano — Sede Curitiba</div><div class="cb">Após o envio, você será direcionado para um atendente.<br><br>Por favor, informe seu nome completo e CPF.</div></div>
-  <div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('sede')">&#8617; Voltar ao menu principal <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -659,7 +656,6 @@ Com exceção dos cursos de Avaliação Imobiliária e Correspondente de Crédit
 <div class="sc" id="s-fat-lon">
   <div class="cd ag"><div class="ci">Atendimento Humano — Londrina</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('r-lon')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 <!-- Regional Maringá -->
@@ -684,7 +680,6 @@ Aguarde um instante, em breve você será atendido.</div></div>
 <div class="sc" id="s-fat-mar">
   <div class="cd ag"><div class="ci">Atendimento Humano — Maringá</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('r-mar')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
 
@@ -710,14 +705,13 @@ Aguarde um instante, em breve você será atendido.</div></div>
 <div class="sc" id="s-fat-gen">
   <div class="cd ag"><div class="ci" id="titulo-regional">Atendimento Humano — Regional</div><div class="cb">Por gentileza, informe seu nome completo e CPF.
 Aguarde um instante, em breve você será atendido.</div></div>
-<div class="si" onclick="go('encerrar')">Encerrar Atendimento <span class="ar">&#8250;</span></div>
   <div class="sb"><div class="si bk" onclick="go('r-gen')">&#8617; Voltar <span class="ar">&#8250;</span></div></div>
 </div>
+
 
 </div><!-- /chat -->
 <div class="ft">
   <div class="fi">Digite uma mensagem...</div>
-
   <div class="fb">&#9658;</div>
 </div>
 </div>
@@ -757,17 +751,28 @@ var LBL = {
 function bc(id) {
   var el = document.getElementById('bc');
   var parts = [];
+  
+
   history._path = history._path || [];
+
   var index = history._path.indexOf(id);
+  
   if (index !== -1) {
+
     history._path = history._path.slice(0, index + 1);
   } else {
+  
     history._path.push(id);
   }
+
   var path = history._path;
+
   for (var i = 0; i < path.length; i++) {
     var k = path[i];
+    
+   
     if (LBL[k]) {
+  
       if (i === path.length - 1) {
         parts.push('<span class="cn">' + LBL[k] + '</span>');
       } 
